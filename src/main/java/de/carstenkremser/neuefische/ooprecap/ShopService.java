@@ -1,13 +1,19 @@
 package de.carstenkremser.neuefische.ooprecap;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class ShopService {
 
-    ProductRepo productRepo = new ProductRepo();
-    OrderRepo orderRepo = new OrderListRepo();
+    final ProductRepo productRepo;
+    final OrderRepo orderRepo;
 
     int orderIdCounter = 0;
+
+    public ShopService(ProductRepo productRepo, OrderRepo orderRepo) {
+        this.productRepo = productRepo;
+        this.orderRepo = orderRepo;
+    }
 
     Order placeNewOrder(String customerId, List<OrderPosition> orderPositions) {
         boolean canPlaceOrder = true;
@@ -31,7 +37,7 @@ public class ShopService {
 
     private Order createOrder(String customerId, List<OrderPosition> orderPositions) {
         OrderPosition[] orderPositionsArray = orderPositions.toArray(orderPositions.toArray(new OrderPosition[0]));
-        String newOrderId = orderPositionsArray.hashCode()+"-"+customerId+"-"+(++orderIdCounter);
+        String newOrderId = Arrays.hashCode(orderPositionsArray) +"-"+customerId+"-"+(++orderIdCounter);
         return new Order(newOrderId,customerId,orderPositionsArray);
     }
 
