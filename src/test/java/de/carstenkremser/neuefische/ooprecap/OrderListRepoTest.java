@@ -13,7 +13,7 @@ class OrderListRepoTest {
     @Test
     void add_shouldContain1Order_when1OrderWasAdded() {
         OrderRepo repo = new OrderListRepo();
-        List<OrderPosition> emptyOrderPositions = new ArrayList<>();
+        OrderPosition[] emptyOrderPositions = new OrderPosition[0];
         String orderId1 = "order-00001";
         Order order1 = new Order(orderId1,"cust1", emptyOrderPositions);
         Order expected = order1;
@@ -29,7 +29,7 @@ class OrderListRepoTest {
     @Test
     void remove_shouldContainNoOrders_when1OrderWasAddedAndRemoved() {
         OrderRepo repo = new OrderListRepo();
-        List<OrderPosition> emptyOrderPositions = new ArrayList<>();
+        OrderPosition[] emptyOrderPositions = new OrderPosition[0];
         String orderId1 = "order-00001";
         Order order1 = new Order(orderId1,"cust1", emptyOrderPositions);
 
@@ -45,7 +45,7 @@ class OrderListRepoTest {
     @Test
     void get_shouldReturnSecondOrder_whenSecondOrderIdWasPassed() {
         OrderRepo repo = new OrderListRepo();
-        List<OrderPosition> emptyOrderPositions = new ArrayList<>();
+        OrderPosition[] emptyOrderPositions = new OrderPosition[0];
         String orderId1 = "order-00001";
         String orderId2 = "order-00002";
         String orderId3 = "order-00003";
@@ -65,7 +65,7 @@ class OrderListRepoTest {
     @Test
     void getAll_shouldReturn3Products_when3ProductsWereAdded() {
         OrderRepo repo = new OrderListRepo();
-        List<OrderPosition> emptyOrderPositions = new ArrayList<>();
+        OrderPosition[] emptyOrderPositions = new OrderPosition[0];
         String orderId1 = "order-00001";
         String orderId2 = "order-00002";
         String orderId3 = "order-00003";
