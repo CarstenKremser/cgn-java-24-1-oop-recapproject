@@ -32,4 +32,11 @@ public class OrderListRepo implements OrderRepo{
     public Order[] getAll() {
         return orders.toArray(new Order[0]);
     }
+
+    public String toString() {
+        return "OrderListRepo{" + "\n" +
+                "orders=" + orders + "\n" +
+                '}';
+    }
+
 }

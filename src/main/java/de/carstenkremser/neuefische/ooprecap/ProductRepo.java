@@ -29,4 +29,15 @@ public class ProductRepo {
     Product[] getAll() {
         return products.toArray(new Product[0]);
     }
+
+    @Override
+    public String toString() {
+        String result = "ProductRepo{" + "\n" +
+                "products= \n";
+        for (Product product:products) {
+            result += "    " + product + "\n";
+        }
+        result += '}';
+        return result;
+    }
 }

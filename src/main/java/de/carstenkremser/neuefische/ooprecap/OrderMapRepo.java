@@ -26,4 +26,11 @@ public class OrderMapRepo implements OrderRepo {
     public Order[] getAll() {
         return orders.values().toArray(new Order[0]);
     }
+
+    @Override
+    public String toString() {
+        return "OrderMapRepo{" + "\n" +
+                "orders=" + orders + "\n" +
+                '}';
+    }
 }

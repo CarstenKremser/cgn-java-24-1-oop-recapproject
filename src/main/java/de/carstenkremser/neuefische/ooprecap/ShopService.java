@@ -36,7 +36,7 @@ public class ShopService {
     }
 
     private Order createOrder(String customerId, List<OrderPosition> orderPositions) {
-        OrderPosition[] orderPositionsArray = orderPositions.toArray(orderPositions.toArray(new OrderPosition[0]));
+        OrderPosition[] orderPositionsArray = orderPositions.toArray(new OrderPosition[0]);
         String newOrderId = Arrays.hashCode(orderPositionsArray) +"-"+customerId+"-"+(++orderIdCounter);
         return new Order(newOrderId,customerId,orderPositionsArray);
     }
@@ -45,4 +45,11 @@ public class ShopService {
         return (productRepo.get(gtin) != null);
     }
 
+    @Override
+    public String toString() {
+        return "ShopService{" + "\n" +
+                "productRepo=" + productRepo + "\n" +
+                ", orderRepo=" + orderRepo + "\n" +
+                '}';
+    }
 }
