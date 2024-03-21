@@ -18,7 +18,7 @@ public class ShopService {
     Order placeNewOrder(String customerId, List<OrderPosition> orderPositions) {
         boolean canPlaceOrder = true;
         for (OrderPosition orderPosition : orderPositions) {
-            Product currentProduct = orderPosition.product();
+            Product currentProduct = orderPosition.getProduct();
             if (!productExists(currentProduct.gtin())) {
                 canPlaceOrder = false;
                 System.out.println("PlaceNewOrder: Product " + currentProduct + " does not exist" );
