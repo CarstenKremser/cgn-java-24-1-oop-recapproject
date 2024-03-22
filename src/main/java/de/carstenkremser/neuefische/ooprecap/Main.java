@@ -30,6 +30,12 @@ public class Main {
 
         ShopService shopService = new ShopService(productRepo,orderRepo);
 
+        ShopCli cli = new ShopCli(shopService);
+
+        cli.run();
+
+        /*
+
         List<OrderPosition> orderPositionList = new ArrayList<>();
         orderPositionList.add(new OrderPosition(1, products[1]));
         orderPositionList.add(new OrderPosition(10, products[2]));
@@ -44,7 +50,7 @@ public class Main {
 
         System.out.println("=== Place second order ===");
         shopService.placeNewOrder("Customer-2", orderPositionList);
-
+        */
         System.out.println("=== ShopService Info ===");
 
         System.out.println(shopService);

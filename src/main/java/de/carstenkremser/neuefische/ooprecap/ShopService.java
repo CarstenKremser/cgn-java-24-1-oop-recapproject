@@ -45,6 +45,10 @@ public class ShopService {
         return (productRepo.get(gtin) != null);
     }
 
+    Product getProduct(String gtin) {
+        return productRepo.get(gtin);
+    }
+
     @Override
     public String toString() {
         return "ShopService{" + "\n" +
